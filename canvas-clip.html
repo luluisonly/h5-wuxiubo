@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width,height=device-height, user-scalable=no,initial-scale=1, minimum-scale=1, maximum-scale=1,target-densitydpi=device-dpi ">
+    <meta name="format-detection" content="telphone=no, email=no"/>
+    <meta name="author" content="lulu"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+    <!-- 页面关键词 -->
+    <meta name="keywords" content=""/>
+    <!-- 搜索引擎抓取 -->
+    <meta name="robots" content="index,follow"/>
+    <!-- 启用360浏览器的极速模式(webkit) -->
+    <meta name="renderer" content="webkit">
+    <!-- 避免IE使用兼容模式 -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- QQ强制竖屏 -->
+    <meta name="x5-orientation" content="portrait">
+    <!-- UC强制全屏 -->
+    <meta name="full-screen" content="yes">
+    <!-- QQ强制全屏 -->
+    <meta name="x5-fullscreen" content="true">
+    <!-- UC应用模式 -->
+    <meta name="browsermode" content="application">
+    <!-- QQ应用模式 -->
+    <meta name="x5-page-mode" content="app">
+    <title>图像裁剪</title>
+    <style>
+
+    </style>
+    <script>
+        window.onload = function () {
+            function draw() {
+                var myCanvas = document.querySelector('#myCanvas');
+                if(myCanvas == null)
+                    return false;
+                var ctx = myCanvas.getContext('2d');
+                ctx.fillStyle="black";
+                ctx.fillRect(0,0,400,300);
+
+                var image = new Image();
+                image.src='src/pic_start.jpg';
+                image.onload = function () {
+                    ctx.beginPath();
+                    ctx.strokeStyle='lightblue';
+                    ctx.arc(150,150,100,0,Math.PI*2,true);
+                    ctx.stroke();
+                    ctx.closePath();
+                    ctx.clip();
+                    ctx.drawImage(image,0,0);
+                };
+            }
+            draw();
+        }
+    </script>
+
+</head>
+<body>
+<canvas id="myCanvas" width="400" height="300" style="border: 1px solid red"></canvas>
+</body>
+</html>

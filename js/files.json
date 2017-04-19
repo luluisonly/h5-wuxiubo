@@ -1,0 +1,58 @@
+{
+  "files": [{
+    "source": "js/new.js",
+    "type": "SCRIPT",
+    "size": 1024,
+    "stopExecution": false
+  },
+    {
+      "source": "js/iphone-inline-video.js",
+      "type": "SCRIPT",
+      "size": 1024,
+      "stopExecution": false
+    },
+    {
+    "source": "src/pic_end.jpg",
+    "type": "IMAGE",
+    "size": 270.336
+  },{
+      "source": "src/pic_end1.png",
+      "type": "IMAGE",
+      "size": 270.336
+    },
+    {
+      "source": "src/pic_start.jpg",
+      "type": "IMAGE",
+      "size": 270.336
+    },
+    {
+      "source": "src/playerBtn.png",
+      "type": "IMAGE",
+      "size": 270.336
+    },
+
+    {
+    "source": "css/pace-theme-barber-shop.css",
+    "type": "CSS",
+    "size": 16.819
+  },
+    {
+      "source": "css/new.css",
+      "type": "CSS",
+      "size": 16.819
+    },
+    {
+      "source": "css/reset.css",
+      "type": "CSS",
+      "size": 16.819
+    },
+    {
+    "type": "VIDEO",
+    "sources": {
+      "h264": {
+        "source": "media/video1.mp4",
+        "size": 4524
+      }
+    }
+  }]
+}

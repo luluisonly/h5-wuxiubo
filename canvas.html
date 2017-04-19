@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width,height=device-height, user-scalable=no,initial-scale=1, minimum-scale=1, maximum-scale=1,target-densitydpi=device-dpi ">
+    <meta name="format-detection" content="telphone=no, email=no"/>
+    <meta name="author" content="lulu"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+    <!-- 页面关键词 -->
+    <meta name="keywords" content=""/>
+    <!-- 搜索引擎抓取 -->
+    <meta name="robots" content="index,follow"/>
+    <!-- 启用360浏览器的极速模式(webkit) -->
+    <meta name="renderer" content="webkit">
+    <!-- 避免IE使用兼容模式 -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- QQ强制竖屏 -->
+    <meta name="x5-orientation" content="portrait">
+    <!-- UC强制全屏 -->
+    <meta name="full-screen" content="yes">
+    <!-- QQ强制全屏 -->
+    <meta name="x5-fullscreen" content="true">
+    <!-- UC应用模式 -->
+    <meta name="browsermode" content="application">
+    <!-- QQ应用模式 -->
+    <meta name="x5-page-mode" content="app">
+    <title>canvas</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        #myCanvas {
+            background: #ddd;
+        }
+    </style>
+</head>
+<body>
+<canvas id="myCanvas" height="400" width="500"></canvas>
+</body>
+<script>
+    window.onload = function (e) {
+        var myCanvas = document.querySelector('#myCanvas');
+        var ctx = myCanvas.getContext('2d');
+        if (myCanvas == null)
+            return false;
+        ctx.fillStyle = '#eeeeff';
+
+
+        /*        //左侧1/4 圆
+         // ctx.beginPath();
+         ctx.arc(100,150,50,0,Math.PI/2,false);
+         ctx.fillStyle='pink';
+         ctx.fill();
+         ctx.strokeStyle='blue';
+         // ctx.closePath();
+         ctx.stroke();
+
+         // 右侧1/4圆
+         // ctx.beginPath();
+         ctx.arc(300,150,50,0,Math.PI/2,false);
+         ctx.fillStyle='rgba(255,0,0,0.25)';
+         ctx.fill();
+         ctx.strokeStyle='blue';
+         //ctx.closePath();
+         ctx.stroke();*/
+
+
+        /* ctx.lineWidth=5;
+         ctx.moveTo(100,100);
+         ctx.lineTo(10,10);
+         ctx.lineTo(150,50);
+         ctx.fillStyle='pink';
+         ctx.strokeStyle='blue';
+         ctx.stroke();*/
+
+        /*  ctx.moveTo(50,50);
+
+         ctx.bezierCurveTo(50,50,150,50,150,150);
+         ctx.stroke();
+         ctx.quadraticCurveTo(150,250,250,250);
+         ctx.stroke();*/
+
+
+        /*    var gl = ctx.createLinearGradient(0,0,0,300);
+         gl.addColorStop(0,'red');
+         gl.addColorStop(0.5,'pink');
+         gl.addColorStop(1,'lightBlue');
+
+         ctx.fillStyle = gl;
+         ctx.rect(0,0,200,300);
+         ctx.fill();*/
+
+        /*    var ol = ctx.createRadialGradient(200,200,0,200,200,200);
+         ol.addColorStop(0,'red');
+         ol.addColorStop(0.5,'pink');
+         ol.addColorStop(1,'blue');
+
+         ctx.fillStyle=ol;
+         // ctx.arc(200,200,150,0,Math.PI*2,true);
+         ctx.rect(0,0,400,400);
+         ctx.fill();*/
+
+        /*   ctx.shadowOffsetX = 10;
+         ctx.shadowOffsetY=10;
+         ctx.shadowColor='rgba(255,0,0,0.5)';
+         ctx.shadowBlur=1.5;
+         ctx.fillStyle='rgba(255,0,0,0.5)';
+         ctx.fillRect(100,100,200,100);
+         */
+        var type = ["no-repeat", "repeat-x", "repeat-y", "repeat"];
+        var i = 0;
+
+
+        var image = new Image();
+        image.src = 'images/luntai.png';
+
+        ctx.fillStyle = 'pink';
+        ctx.fillRect(0, 0, 500, 500);
+        image.onload = function () {
+            var interval = setInterval(function () {
+                // 每次转换平铺类型清空
+                ctx.clearRect(0, 0, 400, 400);
+                if (i >= 4) {
+                    i = 0;
+                }
+
+                var ptrn = ctx.createPattern(image,type[i]);
+                ctx.fillStyle = ptrn;
+                ctx.fillRect(0,0,400,400);
+                i++;
+            },1000);
+        }
+
+
+    }
+</script>
+</html>

@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <script async="" src="src/tcss.ping.js"></script>
+    <title>和吴秀波对视5秒钟</title>
+    <meta name="viewport" content="target-densitydpi=320,width=640,user-scalable=no">
+    <meta name="format-detection" content="telephone=no">
+    <!-- 微信分享 -->
+    <meta name="wxm:timeline_title" content="敢不敢和吴秀波对视5秒钟？">
+    <meta name="wxm:appmessage_title" content="敢不敢和吴秀波对视5秒钟？">
+    <meta name="wxm:appmessage_desc" content="已验证！有些人能拿走他150元！">
+    <!-- 分享缩略图，必须为绝对路径-->
+  <!--  <meta name="wxm:img_url" content="http://wximg.qq.com/wxp/moment/E1IXOmIPx/img/share.jpg">-->
+    <!-- 分享链接-->
+   <!-- <meta name="wxm:link" content="http://wximg.qq.com/wxp/moment/E1IXOmIPx/html/index.html">-->
+
+    <!--swiper皮肤-->
+    <link rel="stylesheet" href="./src/swiper-3.1.0.min.css">
+    <!-- 自定义样式 -->
+    <link rel="stylesheet" type="text/css" href="./src/index.css">
+    <!-- 预加载视频 -->
+    <link rel="prerender" href="media/video1.mp4">
+    <script src="src/cdn_dianjiliu.js"></script>
+</head>
+<body class="pace-done" style="height: 910px;">
+<div class="pace  pace-inactive">
+    <div class="pace-progress" data-progress-text="100%" data-progress="99"
+         style="transform: translate3d(100%, 0px, 0px);">
+        <div class="pace-progress-inner"></div>
+    </div>
+    <div class="pace-activity"></div>
+</div>
+<!-- <div ontouchend="bgm.toggle()" id="music"></div>
+<div class="moved"><img class="movei" src="img/move.png"></div> -->
+<!-- 舞台容器 -->
+<div id="swiper-container" class="swiper-container swiper-container-vertical">
+    <div class="swiper-wrapper">
+        <div class="swiper-slide swiper-no-swiping loading swiper-slide-prev">
+            <div class="move_text x-c">
+                <img src="images/load_text.png" class="">
+            </div>
+            <div class="load_move">
+                <div class="move_car">
+                    <img src="images/car.png">
+                </div>
+                <div class="move_lt1 ltr">
+                    <img src="images/luntai.png">
+                </div>
+                <div class="move_lt2 ltr">
+                    <img src="images/luntai.png">
+                </div>
+            </div>
+            <div class="loading_text x-c"><span>100%</span></div>
+            <div class="loading_wifi x-c">容量较小，没有wifi也能看</div>
+            <!-- 资源预加载 -->
+            <div class="preload">
+                <video preload="auto" src="./media/video1.mp4"></video>
+                <img src="./src/playerBtn.png">
+                <img src="./src/pic_end.jpg">
+                <img src="./src/pic_end1.png">
+                <img src="./src/pointer.png">
+            </div>
+        </div>
+        <div class="swiper-slide swiper-no-swiping index swiper-slide-active">
+            <div class="video">
+                <video id="myVideo1" width="100%" height="100%" preload="auto" x-webkit-airplay="true"
+                       webkit-playsinline="true">
+                    <source type="video/mp4" src="./media/video1.mp4">
+                </video>
+            </div>
+            <div class="canvas">
+                <canvas id="myCanvas" class="myCanvas" width="512" height="910"></canvas>
+            </div>
+            <div class="drimg">
+                <img id="drawImg" src="./src/pic_start.jpg">
+            </div>
+            <div class="startBtn">
+                <img class="c-c" src="./src/playerBtn.png">
+            </div>
+            <div class="show">
+                <div class="show_pic">
+                    <img src="./src/pic_end.jpg">
+                </div>
+                <div class="show_move hxm">
+                    <img src="./src/pic_end1.png">
+                </div>
+                <div class="pointer">
+                    <img class="pm" src="./src/pointer.png">
+                    <div class="point_t x-c">请点击</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<!-- 微信分享js -->
+<!-- <script type="text/javascript" src="http://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script> -->
+<!--<script src="src/wxmoment.min.js"></script>-->
+<!--jq2.1.1，含tap事件-->
+<script src="src/jquery-2.1.1.min.js"></script>
+<!-- swiper3.0 -->
+<script src="src/swiper-3.1.0.min.js"></script>
+<!--pace插件-->
+<script src="src/pace-1.0.0.min.js"></script>
+<!-- 自定义外部js -->
+<!--<script src="script/bgm.js" ></script>-->
+<script src="src/index.js"></script>
+<style type="text/css">
+    @-webkit-keyframes rotation {
+        10% {
+            transform: rotate(90deg);
+            -webkit-transform: rotate(90deg)
+        }
+        50%, 60% {
+            transform: rotate(0deg);
+            -webkit-transform: rotate(0deg)
+        }
+        90% {
+            transform: rotate(90deg);
+            -webkit-transform: rotate(90deg)
+        }
+        100% {
+            transform: rotate(90deg);
+            -webkit-transform: rotate(90deg)
+        }
+    }
+
+    @keyframes rotation {
+        10% {
+            transform: rotate(90deg);
+            -webkit-transform: rotate(90deg)
+        }
+        50%, 60% {
+            transform: rotate(0deg);
+            -webkit-transform: rotate(0deg)
+        }
+        90% {
+            transform: rotate(90deg);
+            -webkit-transform: rotate(90deg)
+        }
+        100% {
+            transform: rotate(90deg);
+            -webkit-transform: rotate(90deg)
+        }
+    }
+
+    #orientLayer {
+        display: none;
+    }
+
+    @media screen and (min-aspect-ratio: 12/7) {
+        #orientLayer {
+            display: block;
+        }
+    }
+
+    .mod-orient-layer {
+        display: none;
+        position: fixed;
+        height: 100%;
+        width: 100%;
+        left: 0;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        background: #333;
+        z-index: 9997
+    }
+
+    .mod-orient-layer__content {
+        position: absolute;
+        width: 100%;
+        top: 45%;
+        margin-top: -75px;
+        text-align: center
+    }
+
+    .mod-orient-layer__icon-orient {
+        background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAIYAAADaCAMAAABU68ovAAAAXVBMVEUAAAD29vb////x8fH////////x8fH5+fn29vby8vL////5+fn39/f6+vr////x8fH////////+/v7////09PT////x8fH39/f////////////////////x8fH///+WLTLGAAAAHXRSTlMAIpML+gb4ZhHWn1c2gvHBvq1uKJcC6k8b187lQ9yhhboAAAQYSURBVHja7d3blpowFIDhTUIAOchZDkre/zE7ycySrbUUpsRN2/1fzO18KzEqxEVgTiZNfgmmtxRc8iaR8HNe8x4BtjQePKayYCIoyBSgvNNE1AkNSHqZyLqk97EgUCCHBzZ5mkg7ScvIJuIyOyXBRFxgpqWZyGsAZLB1KjsJi8nutHU4JCRbFRH8tmirI9k8Jx2sqNs8K/m0LQkrktO2crgcgXGB4AiTEsB0hJfo9MGgX7CGcYiYwQxmMOOvZwRhBG8tCoMXjBDeXvWCEcHbi14wgCBmMIMZzGAGM5jxETNwzMAxA8cMHDNwzMAxA8cMHDNwzMAxA8cMHDNwzMAxY6E2rUQxnH2tz9cirlJFwFBJedaPnUv0M7++egPDE8iAJcIDmxwH5wwv9vUviw2kLbVO3TJU5uul/EyB0FoLp4x60PdGUd3qPurrWyjGGTc05u+1dcgI7/+tCCPARWGhH7o5Y7RCf+bH9ctXLp6v2BVDxfqz0oPXeSVaNtINo/1SXDv4dck8IIkbhtC2ol+iouEonTBCbYvVMnXOjxww6s/RFrBUpXHh/gw1rHj5d/qhYn9Gpk2FWh6xRBRX5Oj3Znh2Sq49/L6+y8pB26q9GbE2dbA2mVbx6I+7MfBglLCttm73ZQi7AD3iL4HqjFYJHSPRppqaUaJ3ATpGa+ckpGak2hRRMyqjGMkvl+xyFeSMwjAqcsZgGDdyhl0oNTnDN4yenJGZFGxNChP5/Y3efh6SM2rDOJMzboYxkDMqwyjIGcIw6F+io2FU1IxIm1JqRmgXSkvNKNCXeTpGrU0JNSO2c6LIGPgCS8AuDHz9ta0SXWDtxoDRH+MqlbC2Dt2G2JFRadtQZt2qq/orGowdGb2euxYiqWEpVWhTBnszoNAPdStuQwxqf0aocdWKW4Z+DfszIh8pxJqbuCE4YAC+4bm0evtipjpgJHeFnyyt1Ku2xa0bhjxr27p75rECNwyI9ZwvXkHq+7aTaMEV44YYy/spfgjgjNHaWW+GeUhGEX7tLlVinIFDDSgnOwhi1V6bU0b6tVS9eAERe863g4dRrtiHdc6o+nn5vtyVVgR79Cqt4uL6gfHPQyGqtP2vf7HADGbcYwaOGThm4JiBYwaOGThm4JiBYwaOGThm4JiBYwaOGThm4JiBYwaOGThm4JjhtOM+J/AgT008yDMkN/dPP9hzS8zAMQN3OEYeekp5YU7KOKXwVXqiY+QS7smcinGKABWdiBgpPJTSMHJ4KidhhPBUSMLw4CmPhKHgKUXCkHsygum71ftNSgCX6bsl8FQyfbcL5EdYsDk0R3j7aiA5wpt5AjKg/2gLJEBD/0Hf2OOf/vRrj6z/7GtP4B3nMKyjHA12kIPSjnJs3FEO0TvKkYJHOWCR+rjJH0Vn6fI5PjNbAAAAAElFTkSuQmCC");
+        display: inline-block;
+        width: 67px;
+        height: 109px;
+        transform: rotate(90deg);
+        -webkit-transform: rotate(90deg);
+        -webkit-animation: rotation infinite 1.5s ease-in-out;
+        animation: rotation infinite 1.5s ease-in-out;
+        -webkit-background-size: 67px;
+        background-size: 67px
+    }
+
+    .mod-orient-layer__desc {
+        margin-top: 20px;
+        font-size: 15px;
+        color: #fff
+    }
+
+    .qr-box {
+        display: none;
+    }
+
+    @media only screen
+    and (min-width: 1023px) {
+        html {
+            width: 414px;
+            margin: 0 auto;
+            background-color: #333 !important;
+            position: absolute;
+            left: 50%;
+            margin-left: -207px;
+            max-height: 672px;
+            height: 100%;
+        }
+
+        .qr-box {
+            position: absolute;
+            left: 50%;
+            margin-left: -75px;
+            border-radius: 4px;
+            z-index: 9999;
+            background-color: #fff;
+            top: 50%;
+            margin-top: -100px;
+            display: block;
+        }
+
+        .qr-box__thumb {
+            position: absolute;
+            right: 59px;
+            width: 25px;
+            height: 25px;
+            display: block;
+            top: 59px;
+            z-index: 9999;
+            padding: 2px;
+            -webkit-background-size: 25px;
+            background-size: 25px;
+            background-repeat: no-repeat;
+            background-position: 2px 2px;
+            border: none;
+        }
+
+        .qr-box__thumb_default {
+            background-color: #fff;
+        }
+
+        .qr-box__text {
+            width: 100%;
+            text-align: center;
+            font-size: 14px;
+            line-height: 18px;
+            padding-bottom: 10px;
+        }
+
+        .qr-box__img {
+            width: 150px;
+            height: 150px;
+            border: none;
+            border-radius: 10px 10px 0 0;
+            background-size: 140px;
+            -webkit-background-size: 140px;
+            background-repeat: no-repeat;
+            background-position: 5px;
+        }
+
+        .qr-box__img img {
+            padding: 5px;
+            width: 140px;
+            height: 140px;
+        }
+
+        .screen__inner {
+            -webkit-transform: scale(1.29375) !important;
+            transform: scale(1.29375) !important;
+        }
+
+        .mod-orient-layer__content {
+            display: none;
+        }
+    }
+</style>
+<div id="orientLayer" class="mod-orient-layer">
+    <div class="mod-orient-layer__content">
+        <i class="icon mod-orient-layer__icon-orient"></i>
+        <div class="mod-orient-layer__desc">为了更好的体验，请使用竖屏浏览</div>
+    </div>
+</div>
+<div class="qr-box">
+    <div class="qr-box__text">微信扫一扫<br>手机浏览效果更佳</div>
+</div>
+
+<!-- <script type="text/javascript" src="../js/share.js"></script> --></body>
+</html>

@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width,height=device-height, user-scalable=no,initial-scale=1, minimum-scale=1, maximum-scale=1">
+    <meta name="author" content="lulu"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+    <!-- 页面关键词 -->
+    <meta name="keywords" content=""/>
+    <!-- 搜索引擎抓取 -->
+    <meta name="robots" content="index,follow"/>
+    <!-- 启用360浏览器的极速模式(webkit) -->
+    <meta name="renderer" content="webkit">
+    <!-- 避免IE使用兼容模式 -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- QQ强制竖屏 -->
+    <meta name="x5-orientation" content="portrait">
+    <!-- UC强制全屏 -->
+    <meta name="full-screen" content="yes">
+    <!-- QQ强制全屏 -->
+    <meta name="x5-fullscreen" content="true">
+    <!-- UC应用模式 -->
+    <meta name="browsermode" content="application">
+    <!-- QQ应用模式 -->
+    <meta name="x5-page-mode" content="app">
+    <title>小吴对话5秒钟</title>
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/new.css">
+    <link rel="stylesheet" href="css/pace-theme-barber-shop.css">
+    <script src="src/jquery-2.1.1.min.js"></script>
+    <script src="js/jquery.html5Loader.min.js"></script>
+    <script src="src/pace-1.0.0.min.js"></script>
+    <script src="js/iphone-inline-video.js"></script>
+    <script src="js/new.js"></script>
+    <script>
+        var timer = null;
+        $.html5Loader({
+            filesToLoad:'js/files.json',
+            onUpdate: function(perc){
+                console.log('perc:'+perc);
+                timer = setInterval(function () {
+                    $('.progress').html(perc+'%')
+                },100);
+            },
+            stopExecution:true,
+            onComplete: function () {
+                clearInterval(timer);
+                $('.page1').hide();
+                // scanVideo(1);
+                enableVideos();
+            },
+            onElementLoaded: function ( obj, elm ){
+                if(!~$.inArray(obj.type,["TEXT","SCRIPT","CSS"])) {
+                    $("#wrapper").append(elm);
+                }
+            }
+        });
+
+    </script>
+</head>
+<body>
+<div class="container">
+    <div class="page page1">
+        <div class="car-text">
+            <img src="images/load_text.png">
+        </div>
+        <div class="car-move">
+            <div class="car">
+                <img class="car-box" src="images/car.png">
+                <img class="tyre1" src="images/luntai.png">
+                <img class="tyre2" src="images/luntai.png">
+            </div>
+        </div>
+        <div class="progress">0%</div>
+        <div class="warn-tip">
+            容量较小，没有wifi也能观看
+        </div>
+    </div>
+    <div class="page page2">
+        <div class="video video-container">
+            <video x-webkit-airplay="true" webkit-playsinline="true"  id="myVideo1"
+                   playsinline  width="100%" preload="auto" x5-video-player-type='h5' x5-video-player-fullscreen='false'>
+                <source type="video/mp4" src="./media/video1.mp4">
+            </video>
+        </div>
+        <div class="drimg">
+            <img id="drawImg" src="./src/pic_start.jpg">
+        </div>
+        <div class="startBtn">
+            <img class="c-c" src="./src/playerBtn.png">
+        </div>
+    </div>
+    <div class="page page3">
+
+        <div class="show_pic">
+            <img src="./src/pic_end.jpg">
+        </div>
+        <div class="show_move hxm">
+            <img src="./src/pic_end1.png">
+        </div>
+        <div class="pointer">
+            <img class="pm" src="./src/pointer.png">
+            <div class="point_t x-c">请点击</div>
+        </div>
+
+    </div>
+</div>
+
+</body>
+</html>
